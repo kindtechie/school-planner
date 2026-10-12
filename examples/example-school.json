@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "id": "3304c23d-9684-49e3-ad2f-ee8646cdf196",
+  "name": "مدرسهٔ نمونه — برای تمرین",
+  "days": [
+    "شنبه",
+    "یکشنبه",
+    "دوشنبه",
+    "سه‌شنبه",
+    "چهارشنبه"
+  ],
+  "periods": 4,
+  "classes": [
+    {
+      "id": "c1",
+      "name": "دهم ریاضی",
+      "grade": "دهم",
+      "track": "ریاضی",
+      "bells": [
+        [
+          450,
+          540
+        ],
+        [
+          555,
+          645
+        ],
+        [
+          660,
+          750
+        ],
+        [
+          765,
+          855
+        ]
+      ]
+    },
+    {
+      "id": "c2",
+      "name": "دهم انسانی",
+      "grade": "دهم",
+      "track": "انسانی",
+      "bells": [
+        [
+          450,
+          540
+        ],
+        [
+          555,
+          645
+        ],
+        [
+          660,
+          750
+        ],
+        [
+          765,
+          855
+        ]
+      ]
+    }
+  ],
+  "subjects": [
+    {
+      "id": "math",
+      "name": "ریاضی"
+    },
+    {
+      "id": "persian",
+      "name": "فارسی"
+    },
+    {
+      "id": "sport",
+      "name": "ورزش"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "t1",
+      "name": "دبیر ریاضی",
+      "subjectIds": [
+        "math"
+      ],
+      "availability": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "availabilityMode": "hard",
+      "availabilityWeight": 10
+    },
+    {
+      "id": "t2",
+      "name": "دبیر فارسی",
+      "subjectIds": [
+        "persian"
+      ],
+      "availability": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "availabilityMode": "hard",
+      "availabilityWeight": 10
+    },
+    {
+      "id": "t3",
+      "name": "دبیر ورزش",
+      "subjectIds": [
+        "sport"
+      ],
+      "availability": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "availabilityMode": "hard",
+      "availabilityWeight": 10
+    }
+  ],
+  "lessons": [
+    {
+      "id": "l1",
+      "name": "ریاضی",
+      "subjectId": "math",
+      "classIds": [
+        "c1"
+      ],
+      "teacherIds": [
+        "t1"
+      ],
+      "count": 3,
+      "duration": 2,
+      "titles": {}
+    },
+    {
+      "id": "l2",
+      "name": "ریاضی",
+      "subjectId": "math",
+      "classIds": [
+        "c2"
+      ],
+      "teacherIds": [
+        "t1"
+      ],
+      "count": 2,
+      "duration": 2,
+      "titles": {}
+    },
+    {
+      "id": "l3",
+      "name": "فارسی تجمیعی",
+      "subjectId": "persian",
+      "classIds": [
+        "c1",
+        "c2"
+      ],
+      "teacherIds": [
+        "t2"
+      ],
+      "count": 2,
+      "duration": 2,
+      "titles": {}
+    },
+    {
+      "id": "l4",
+      "name": "ورزش تجمیعی",
+      "subjectId": "sport",
+      "classIds": [
+        "c1",
+        "c2"
+      ],
+      "teacherIds": [
+        "t3"
+      ],
+      "count": 1,
+      "duration": 2,
+      "titles": {}
+    }
+  ],
+  "rules": [
+    {
+      "id": "r1",
+      "name": "ریاضی دهم ریاضی در سه روز",
+      "kind": "day_count",
+      "mode": "hard",
+      "weight": 10,
+      "enabled": true,
+      "lessonIds": [
+        "l1"
+      ],
+      "min": 3,
+      "max": 3
+    },
+    {
+      "id": "r2",
+      "name": "ریاضی بدون فاصلهٔ خالی",
+      "kind": "no_gaps",
+      "mode": "soft",
+      "weight": 10,
+      "enabled": true,
+      "teacherIds": [
+        "t1"
+      ],
+      "unit": "period"
+    }
+  ],
+  "solution": {
+    "status": "OPTIMAL",
+    "seconds": 0.01,
+    "schedule": [
+      {
+        "id": "l1:0",
+        "start": 12,
+        "teacherId": "t1"
+      },
+      {
+        "id": "l1:1",
+        "start": 22,
+        "teacherId": "t1"
+      },
+      {
+        "id": "l1:2",
+        "start": 6,
+        "teacherId": "t1"
+      },
+      {
+        "id": "l2:0",
+        "start": 20,
+        "teacherId": "t1"
+      },
+      {
+        "id": "l2:1",
+        "start": 4,
+        "teacherId": "t1"
+      },
+      {
+        "id": "l3:0",
+        "start": 2,
+        "teacherId": "t2"
+      },
+      {
+        "id": "l3:1",
+        "start": 0,
+        "teacherId": "t2"
+      },
+      {
+        "id": "l4:0",
+        "start": 24,
+        "teacherId": "t3"
+      }
+    ],
+    "audit": {
+      "valid": true,
+      "errors": [],
+      "rules": [
+        {
+          "id": "r1",
+          "name": "ریاضی دهم ریاضی در سه روز",
+          "mode": "hard",
+          "satisfied": true,
+          "weight": 10
+        },
+        {
+          "id": "r2",
+          "name": "ریاضی بدون فاصلهٔ خالی",
+          "mode": "soft",
+          "satisfied": true,
+          "weight": 10
+        },
+        {
+          "id": "availability:t1",
+          "name": "حضور دبیر ریاضی",
+          "mode": "hard",
+          "satisfied": true,
+          "weight": 10
+        },
+        {
+          "id": "availability:t2",
+          "name": "حضور دبیر فارسی",
+          "mode": "hard",
+          "satisfied": true,
+          "weight": 10
+        },
+        {
+          "id": "availability:t3",
+          "name": "حضور دبیر ورزش",
+          "mode": "hard",
+          "satisfied": true,
+          "weight": 10
+        }
+      ],
+      "penalty": 0
+    },
+    "objective": 0.0,
+    "bound": 0.0,
+    "changed": 0,
+    "preserveWeight": 0
+  },
+  "revision": 0
+}

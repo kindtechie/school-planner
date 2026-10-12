@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>هم‌درس | برنامه‌ریز مدرسه</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <aside id="sidebar">
+      <a href="#" class="brand"
+        ><span class="brand-icon">▦</span
+        ><span>هم‌درس<small>برنامه‌ریز مدرسه</small></span></a
+      >
+      <label class="school-picker"
+        >مدرسهٔ جاری<select
+          id="school-select"
+          aria-label="انتخاب مدرسه"
+        ></select
+      ></label>
+      <button class="new-school" data-action="new-school">
+        ＋ مدرسهٔ جدید
+      </button>
+      <nav id="navigation" aria-label="بخش‌های برنامه"></nav>
+      <div class="sidebar-bottom">
+        <span class="local-dot"></span> محلی و آفلاین<button
+          data-action="quit"
+          class="text-button"
+        >
+          بستن برنامه
+        </button>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb">
+          فضای کاری <span>/</span>
+          <strong id="school-name">مدرسه‌های من</strong>
+        </div>
+        <span id="save-status" role="status">آماده</span>
+      </header>
+      <main id="main"></main>
+      <footer>هم‌درس · هر مدرسه، یک برنامهٔ منظم</footer>
+    </div>
+    <dialog id="dialog">
+      <form id="editor">
+        <div class="dialog-head">
+          <h2 id="dialog-title"></h2>
+          <button
+            type="button"
+            data-action="close-dialog"
+            class="icon-button"
+            aria-label="بستن"
+          >
+            ×
+          </button>
+        </div>
+        <div id="dialog-fields"></div>
+        <p id="form-error" class="error" role="alert"></p>
+        <div class="dialog-actions">
+          <button type="submit" class="primary">ذخیرهٔ تغییرات</button
+          ><button type="button" data-action="close-dialog">انصراف</button>
+        </div>
+      </form>
+    </dialog>
+    <div id="toast" role="status" hidden></div>
+    <input
+      id="import-file"
+      type="file"
+      accept=".json,application/json"
+      hidden
+    />
+  </body>
+</html>
